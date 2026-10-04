@@ -1,0 +1,31 @@
+# Quader Store — Search Engine & AI Crawler Directives
+# https://store.quader864.ir
+
+User-agent: *
+Allow: /
+Allow: /shop
+Allow: /products
+Allow: /courses
+Allow: /bundles
+Allow: /subscriptions
+Allow: /item/
+Allow: /blog
+Allow: /blog/
+Allow: /llms.txt
+Allow: /sitemap.xml
+
+# Exclude private account, admin, checkout, and payment callback routes from indexing
+Disallow: /checkout
+Disallow: /shop/checkout
+Disallow: /payment-success
+Disallow: /payment-pending
+Disallow: /payment-failed
+Disallow: /dashboard
+Disallow: /shop/dashboard
+Disallow: /admin/
+Disallow: /auth/
+Disallow: /password-reset
+Disallow: /api/
+Disallow: /shop/payments/
+
+Sitemap: https://store.quader864.ir/sitemap.xml

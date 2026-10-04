@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
+  <!-- Primary Storefront Hub -->
+  <url>
+    <loc>https://store.quader864.ir/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://store.quader864.ir/og-image.png</image:loc>
+      <image:title>Quader Store – Web Systems &amp; Quantitative Trading Tools</image:title>
+      <image:caption>Architectural Web Systems, Full-Stack SaaS Platforms, and Quantitative Trading Tools by Alireza Kiani (Quader).</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Category Hubs -->
+  <url>
+    <loc>https://store.quader864.ir/products</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://store.quader864.ir/courses</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://store.quader864.ir/bundles</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://store.quader864.ir/subscriptions</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://store.quader864.ir/blog</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Flagship Software Systems, Masterclasses & Bundles -->
+  <url>
+    <loc>https://store.quader864.ir/item/qdr-orderflow-engine</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://store.quader864.ir/images/optimized/product_quant_engine.webp</image:loc>
+      <image:title>Quader OrderFlow &amp; Liquidity Matrix Engine</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://store.quader864.ir/item/qdr-saas-fintech-kit</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://store.quader864.ir/images/optimized/product_saas_architecture.webp</image:loc>
+      <image:title>Multi-Tenant Fintech &amp; SaaS Architecture Kit</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://store.quader864.ir/item/qdr-headless-commerce</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://store.quader864.ir/images/optimized/product_commerce_system.webp</image:loc>
+      <image:title>Architectural Headless Store &amp; Digital Licensing System</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://store.quader864.ir/item/qdr-spatial-ui-system</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://store.quader864.ir/images/optimized/store_hero_showcase.webp</image:loc>
+      <image:title>Kinetic Studio UI &amp; Interactive Frontend System</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://store.quader864.ir/item/qdr-course-quant-fullstack</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://store.quader864.ir/images/optimized/course_quant_web_masterclass.webp</image:loc>
+      <image:title>Full-Stack Quantitative Systems &amp; MQL5 Architecture</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://store.quader864.ir/item/qdr-course-web-architecture</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://store.quader864.ir/images/optimized/product_commerce_system.webp</image:loc>
+      <image:title>Modern E-Commerce &amp; SaaS Web Engineering Bootcamp</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://store.quader864.ir/item/qdr-bundle-studio-complete</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://store.quader864.ir/images/optimized/store_hero_showcase.webp</image:loc>
+      <image:title>Quader Complete Studio &amp; Quant Engineering Bundle</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://store.quader864.ir/item/qdr-bundle-fintech-pro</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://store.quader864.ir/images/optimized/product_quant_engine.webp</image:loc>
+      <image:title>Algorithmic Trading &amp; Telemetry Pro Bundle</image:title>
+    </image:image>
+  </url>
+</urlset>
