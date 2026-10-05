@@ -7,7 +7,18 @@
     <!-- Single Page Apps for GitHub Pages: Restore route from 404.html redirect -->
     <script type="text/javascript">
       (function (l) {
-        if (l.search && l.search[1] === '/') {
+        // 1. Check sessionStorage for instant clean restoration
+        try {
+          var redirect = sessionStorage.getItem('spa_redirect');
+          if (redirect) {
+            sessionStorage.removeItem('spa_redirect');
+            window.history.replaceState(null, null, redirect);
+            return;
+          }
+        } catch (e) {}
+
+        // 2. Check query string ?/route fallback
+        if (l.search && (l.search.slice(0, 2) === '?/' || l.search[1] === '/')) {
           var decoded = l.search
             .slice(1)
             .split('&')
@@ -15,10 +26,12 @@
               return s.replace(/~and~/g, '&');
             })
             .join('?');
+          var basePath = l.pathname.endsWith('/') ? l.pathname.slice(0, -1) : l.pathname;
+          var targetPath = decoded.startsWith('/') ? decoded : '/' + decoded;
           window.history.replaceState(
             null,
             null,
-            l.pathname.slice(0, -1) + decoded + l.hash
+            basePath + targetPath + l.hash
           );
         }
       })(window.location);
@@ -277,7 +290,7 @@
         document.documentElement.classList.add('dark');
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-C0bgWFKd.js"></script>
+    <script type="module" crossorigin src="/assets/index-DZW8Q_pa.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-react-SsYBO-Ko.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-motion-BVf40mDC.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-icons-E7oVK4GZ.js">
