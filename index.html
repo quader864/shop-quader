@@ -82,8 +82,24 @@
     <meta name="apple-mobile-web-app-title" content="QuaderStore" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/svg+xml" href="/store-q-logo.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="alternate icon" href="/favicon.ico" />
+
+    <!-- Unregister any orphaned development service workers from previous builds -->
+    <script>
+      (function() {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for (var i = 0; i < registrations.length; i++) {
+              var reg = registrations[i];
+              var swUrl = (reg.active && reg.active.scriptURL) || '';
+              if (swUrl.indexOf('dev-sw.js') !== -1) {
+                reg.unregister();
+              }
+            }
+          }).catch(function() {});
+        }
+      })();
+    </script>
 
     <!-- Preconnected API & Font Origins -->
     <link rel="preconnect" href="https://api.quader864.ir" />
@@ -241,11 +257,11 @@
         document.documentElement.classList.add('dark');
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-4JJmln2P.js"></script>
+    <script type="module" crossorigin src="/assets/index-BpkjsIoX.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-react-SsYBO-Ko.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-motion-BVf40mDC.js">
-    <link rel="modulepreload" crossorigin href="/assets/vendor-icons-DiY7Ez6w.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-CTaaHHJ7.css">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-icons-E7oVK4GZ.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BnXQKEkI.css">
   <link rel="manifest" href="/manifest.webmanifest"></head>
   <body>
     <noscript>
@@ -254,6 +270,38 @@
         <p>Explore production-ready web systems, full-stack SaaS kits, and quantitative MQL5 trading engines by Alireza Kiani (Quader). Please enable JavaScript to browse the interactive catalog.</p>
       </div>
     </noscript>
-    <div id="root"></div>
+    <div id="root"></div>
+    <script>
+      // Immediate Service Worker Cache Buster & Skip-Waiting Dispatcher
+      (function() {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for (var i = 0; i < registrations.length; i++) {
+              var reg = registrations[i];
+              try { reg.update(); } catch(e) {}
+              if (reg.waiting) {
+                try { reg.waiting.postMessage({ type: 'SKIP_WAITING' }); } catch(e) {}
+              }
+            }
+          }).catch(function() {});
+
+          // Purge stale v1/v2/v3/quader-api caches so old JS bundles and cached API responses are evicted immediately
+          if ('caches' in window) {
+            caches.keys().then(function(names) {
+              names.forEach(function(name) {
+                if (
+                  name.indexOf('quader-api') !== -1 ||
+                  name.indexOf('-v1') !== -1 ||
+                  name.indexOf('-v2') !== -1 ||
+                  name.indexOf('-v3') !== -1
+                ) {
+                  caches.delete(name);
+                }
+              });
+            }).catch(function() {});
+          }
+        }
+      })();
+    </script>
   </body>
 </html>
