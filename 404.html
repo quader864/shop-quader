@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quader Store</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script intercepts 404 responses on GitHub Pages and redirects back to the SPA root,
+      // encoding the requested path, query parameters, and hash so index.html can restore the route.
+      (function () {
+        var l = window.location;
+        // On GitHub Pages: username.github.io/repo-name has 1 path segment to keep.
+        // On custom domains (like store.quader864.ir), keep 0 segments.
+        var isGithubSubdomain = l.hostname.indexOf('github.io') !== -1;
+        var pathSegmentsToKeep = (isGithubSubdomain && l.pathname.split('/').length > 2) ? 1 : 0;
+
+        var pathArray = l.pathname.split('/');
+        var basePath = pathArray.slice(0, 1 + pathSegmentsToKeep).join('/');
+        var routePath = pathArray.slice(1 + pathSegmentsToKeep).join('/');
+
+        var redirectUrl =
+          l.protocol +
+          '//' +
+          l.host +
+          basePath +
+          '/?/' +
+          routePath.replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash;
+
+        l.replace(redirectUrl);
+      })();
+    </script>
+  </head>
+  <body style="background: #090A0D; color: #FBFBF9; font-family: system-ui, -apple-system, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+    <noscript>
+      <div style="text-align: center; padding: 2rem;">
+        <h1>Redirecting to Quader Store...</h1>
+        <p><a href="/" style="color: #10B981;">Click here to return to the home page</a></p>
+      </div>
+    </noscript>
+  </body>
+</html>
