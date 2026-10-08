@@ -17,22 +17,31 @@
           }
         } catch (e) {}
 
-        // 2. Check query string ?/route fallback
-        if (l.search && (l.search.slice(0, 2) === '?/' || l.search[1] === '/')) {
-          var decoded = l.search
-            .slice(1)
-            .split('&')
-            .map(function (s) {
-              return s.replace(/~and~/g, '&');
-            })
-            .join('?');
-          var basePath = l.pathname.endsWith('/') ? l.pathname.slice(0, -1) : l.pathname;
-          var targetPath = decoded.startsWith('/') ? decoded : '/' + decoded;
-          window.history.replaceState(
-            null,
-            null,
-            basePath + targetPath + l.hash
-          );
+        // 2. Check query string fallback (?/route, ?p=route, etc.)
+        var search = l.search || '';
+        if (search) {
+          var raw = '';
+          if (search.indexOf('?/') === 0) {
+            raw = search.slice(2);
+          } else if (search.indexOf('?p=/') === 0) {
+            raw = search.slice(4);
+          } else if (search.indexOf('?/p=') === 0) {
+            raw = search.slice(4);
+          } else if (search.indexOf('?p=') === 0) {
+            raw = search.slice(3);
+          } else if (search.indexOf('?/') !== -1) {
+            raw = search.slice(search.indexOf('?/') + 2);
+          }
+          if (raw) {
+            var decoded = raw
+              .split('&')
+              .map(function (s) {
+                return s.replace(/~and~/g, '&');
+              })
+              .join('?');
+            var targetPath = '/' + decoded.replace(/^\/+/, '');
+            window.history.replaceState(null, null, targetPath + l.hash);
+          }
         }
       })(window.location);
     </script>
@@ -290,11 +299,11 @@
         document.documentElement.classList.add('dark');
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-B-d69wa_.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/vendor-react-SsYBO-Ko.js">
-    <link rel="modulepreload" crossorigin href="/assets/vendor-motion-BVf40mDC.js">
-    <link rel="modulepreload" crossorigin href="/assets/vendor-icons-E7oVK4GZ.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-BTSutdIO.css">
+    <script type="module" crossorigin src="/assets/index-CxloGSN1.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-react-BzXqRi8k.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-motion-cNmfiwpP.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-icons-C_jvLh5s.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-DA4xBdBS.css">
   <link rel="manifest" href="/manifest.webmanifest"></head>
   <body>
     <noscript>
